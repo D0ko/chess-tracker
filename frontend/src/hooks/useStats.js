@@ -19,7 +19,7 @@ export const usePlayerSummary = (username, options = {}) => {
     queryKey: ['player-summary', username],
     queryFn: async () => {
       const response = await api.stats.getSummary(username);
-      return response.data.data;
+      return response.data;
     },
     enabled: !!username,
     staleTime: 5 * 60 * 1000,
